@@ -94,9 +94,21 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   // ADDED PROMPTS AND CONFIRMS TO SITE
-  const passwordLength = prompt(
-    "Pick a password link between 8-128 characters."
+  const passwordLengthOption = prompt(
+    "Pick a password length between 8-128 characters."
   );
+
+  const parsedPassword = Number(passwordLengthOption);
+
+  if (parsedPassword < 8 || parsedPassword > 128) {
+    return alert(
+      "Wow! Check out your password length! Doesn't match criteria!"
+    );
+  }
+
+  if (parsedPassword != NaN) {
+    return alert("Please only use numbers!");
+  }
 
   const lowCaseOption = confirm(
     "Do you want lowercase letters in your password?"
@@ -110,7 +122,12 @@ function generatePassword() {
   const specialOption = confirm(
     "Would you like your password to include any special characters?"
   );
+
+  // const characters = [numbers, lowerCase, upperCase,specialC];
+  // const passwordLength = => 8 - => 128;
+  // const password = "";
 }
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
