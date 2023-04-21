@@ -89,12 +89,13 @@ const specialC = [
   ".",
   "?",
 ];
-let finalPasswordArray = [];
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
+  let finalPasswordArray = [];
+
   let generatedPassword = "";
   // ADDED PROMPTS, CONFIRMS, AND ALERTS TO PAGE
   const passwordLengthOption = prompt(
@@ -154,7 +155,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   // ADDED AN OPENING MESSAGE TO BE DISPLAYED WITH PASSWORD IN THE TEXT AREA
-  passwordText.value = "Your generated password is:  " + password;
+  passwordText.value = "Your generated password is: " + password;
 }
 
 // Add event listener to generate button
